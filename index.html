@@ -553,20 +553,20 @@ footer{background:var(--choco);padding:3rem 2rem 1.8rem;text-align:center}
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stat">
-    <div class="stat-num">500+</div>
-    <div class="stat-lbl">Clientes felices</div>
-  </div>
-  <div class="stat">
     <div class="stat-num">100%</div>
     <div class="stat-lbl">Artesanal</div>
   </div>
   <div class="stat">
-    <div class="stat-num">5★</div>
-    <div class="stat-lbl">Calificación</div>
-  </div>
-  <div class="stat">
     <div class="stat-num">0</div>
     <div class="stat-lbl">Preservantes</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">♥</div>
+    <div class="stat-lbl">Hecho con amor</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">✦</div>
+    <div class="stat-lbl">Pedido a medida</div>
   </div>
 </div>
 
@@ -581,32 +581,18 @@ footer{background:var(--choco);padding:3rem 2rem 1.8rem;text-align:center}
   <div class="orn rv" style="margin-top:2rem">❀ ♥ ❀</div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- INSTAGRAM CTA (replaces fake testimonials) -->
 <section id="avis" class="sec">
   <div class="sec-header rv">
-    <div class="sec-tag">💬 Opiniones</div>
-    <h2 class="sec-title">LO QUE DICEN NUESTROS CLIENTES</h2>
-    <p class="sec-sub">Más de 500 familias ya confiaron en Petit Bonheur para sus momentos más especiales.</p>
+    <div class="sec-tag">📸 Instagram</div>
+    <h2 class="sec-title">SÍGUENOS EN INSTAGRAM</h2>
+    <p class="sec-sub">Descubre nuestras creaciones, sorpresas y novedades. ¡Cada dulce cuenta una historia!</p>
   </div>
-  <div class="testi-grid">
-    <div class="testi-card rv rv-d1">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"¡Las tortas de Mila son increíbles! Pedí una para el cumpleaños de mi hija y todos quedaron fascinados. La decoración fue exactamente como la imaginé."</p>
-      <div class="testi-author">Laura M.</div>
-      <div class="testi-role">Lima · Torta personalizada</div>
-    </div>
-    <div class="testi-card rv rv-d2">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"La calidad es excepcional, todo hecho con amor y dedicación. El gift box que pedí para el día de la madre fue perfecto. ¡100% recomendado!"</p>
-      <div class="testi-author">Sandra R.</div>
-      <div class="testi-role">Lima · Gift Box dulce</div>
-    </div>
-    <div class="testi-card rv rv-d3">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Descubrí Petit Bonheur por una amiga y ahora pido en cada ocasión especial. Los alfajores son de otro nivel. ¡Gracias Mila por hacer todo tan especial!"</p>
-      <div class="testi-author">Carolina V.</div>
-      <div class="testi-role">Lima · Alfajores y mini dulces</div>
-    </div>
+  <div class="rv" style="text-align:center">
+    <a id="ig-cta-btn" href="https://www.instagram.com/petitbonheurb" target="_blank"
+       style="display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:50px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.06em;color:#fff;text-decoration:none;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);box-shadow:0 8px 28px rgba(220,39,67,.3);transition:all .25s">
+      📸 @petitbonheurb
+    </a>
   </div>
 </section>
 
@@ -854,7 +840,7 @@ function applyUI() {
   // Render product cards
   document.getElementById('products-grid').innerHTML = cfg.products.map((p, i) => `
     <div class="card rv rv-d${(i % 3) + 1}" onclick="openModal(${i})">
-      ${i === 0 ? '<div class="card-badge">⭐ Más pedido</div>' : ''}
+      ${i === 0 ? '<div class="card-badge">✦ Especial</div>' : ''}
       <div class="card-photo">
         <img src="${p.photo || ''}" alt="${p.name}" onerror="this.style.display='none'">
         <div class="cpo"></div>
@@ -862,7 +848,7 @@ function applyUI() {
       <div class="card-body">
         <div class="card-tag">${p.tag}</div>
         <div class="card-name">${p.name}</div>
-        <div class="card-stars">★★★★★</div>
+
         <div class="card-desc">${p.desc}</div>
         <div class="card-foot">
           <span class="card-price">${p.price}</span>
